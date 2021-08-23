@@ -11,16 +11,16 @@ import course.java.training.repositories.ProductRepository;
 
 @Service
 public class ProductService {
-	
+
 	@Autowired
-	private ProductRepository userRepository;
+	private ProductRepository repository;
 	
-	public List<Product> findAll(){
-		return userRepository.findAll();
+	public List<Product> findAll() {
+		return repository.findAll();
 	}
-		
-	public Product findById(Long Id){
-		Optional<Product> user = userRepository.findById(Id);
-		return user.get();
+	
+	public Product findById(Long id) {
+		Optional<Product> obj = repository.findById(id);
+		return obj.get();
 	}
 }

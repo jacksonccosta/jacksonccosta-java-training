@@ -13,14 +13,14 @@ import course.java.training.repositories.CategoryRepository;
 public class CategoryService {
 	
 	@Autowired
-	private CategoryRepository userRepository;
+	private CategoryRepository categoryRepository;
 	
 	public List<Category> findAll(){
-		return userRepository.findAll();
+		return categoryRepository.findAll();
 	}
 		
 	public Category findById(Long Id){
-		Optional<Category> user = userRepository.findById(Id);
-		return user.get();
+		Optional<Category> cat = categoryRepository.findById(Id);
+		return cat.get();
 	}
 }
