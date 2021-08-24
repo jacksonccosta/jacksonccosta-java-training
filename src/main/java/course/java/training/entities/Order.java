@@ -100,6 +100,16 @@ public class Order implements Serializable {
 	public Set<OrderItem> getItems(){
 		return this.items;
 	}
+	
+	public Double getTotal() {
+		Double sum = 0.00;
+		
+		for(OrderItem item : items) {
+			sum += item.getSubTotal();
+		}
+		
+		return sum;
+	}
 
 	@Override
 	public int hashCode() {
